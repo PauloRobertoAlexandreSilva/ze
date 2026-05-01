@@ -1,15 +1,64 @@
 {
   "name": "Zé",
   "short_name": "Zé",
-  "start_url": "index.html",
+  "app_name": "Zé",
+  "theme_color": "#0a0a0a",
+  "background_color": "#0a0a0a",
   "display": "fullscreen",
-  "background_color": "#0d0d0d",
-  "theme_color": "#00e5ff",
+  "orientation": "landscape",
+  "start_url": "index.html",
+  "categories": ["productivity", "utilities", "social"],
+  "description": "Transforma o seu smartphone em um amigo virtual poderoso!",
   "icons": [
-    {
-      "src": "img/Ze.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+        {
+            "src": "img/icon_60.png",
+            "sizes": "60x60",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon_72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon_96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon_128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon_144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon_152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon_192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon_256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon_384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
 }

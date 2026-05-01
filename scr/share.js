@@ -1,11 +1,15 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("load", function() {
+
+    const buttonShare = document.getElementById("buttonShare");
 
     if (!('share' in navigator) || !('canShare' in navigator)) {
-        console.log('Web Share API not supported in this environment.');
+        //console.log('Web Share API not supported in this environment.');
         document.getElementById("buttonShare").style.display = "none";
         return;
     } else {
-        document.getElementById("buttonShare").addEventListener("click", async () => {
+
+        buttonShare.addEventListener('click', async () => {
+
             try {
                 const response = await fetch('img/icon_180.png');
                 const blob = await response.blob();
@@ -20,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 const shareData = {
                     files: filesArray,
                     title: "Zé - Seu Assistente Virtual",
-                    text: "Transforma o seu smartphone em um assistente virtual poderoso!\n\n\n",
+                    text: "Transforma o seu smartphone em um amigo virtual poderoso!\n\n\n",
                     url: "https://paulorobertoalexandresilva.github.io/ze/",
                 };
 

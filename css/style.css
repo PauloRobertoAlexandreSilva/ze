@@ -22,20 +22,23 @@ body {
 }
 
 .splash-logo {
-    z-index: 99;
     position: absolute;
+    top: 0; left: 0;
     width: 100vw; height: 100vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-image: url('../img/Ze.png');
-    background-size: 100vw 100vh;
-    animation: blinkerlogo 2s linear;
+    background-image: url('../img/logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: blink-logo 5s linear;
     opacity: 0;
 }
-@keyframes blinkerlogo {
-    0% { opacity: 100%; display: block;}
-    100% { opacity: 0; display: none;}
+@keyframes blink-logo {
+    0% { opacity: 100%; display: block; z-index: 3;}
+    100% { opacity: 0; display: none; z-index: 0;}
+}
+@-webkit-keyframes blink-logo {
+    0% { opacity: 100%; display: block; z-index: 3;}
+    100% { opacity: 0; display: none; z-index: 0;}
 }
 
 #status-bar {
@@ -85,20 +88,27 @@ body {
 .pupil {
     width: 20vw;
     height: 20vw;
+    display: flex;
     background: var(--cyan);
     border-radius: 50%;
     position: absolute;
-    animation: blinkpupil 4s infinite;
+    animation: blink-animation 4s infinite;
     border: 3px solid white;
     box-shadow: 7px 7px 1px rgba(var(--sombra), 1);
     transition: transform 0.05s linear;
 }
-@keyframes blinkpupil {
+@keyframes blink-animation {
+    0%, 45%, 55%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.1); }
+}
+@-webkit-keyframes blink-animation {
     0%, 45%, 55%, 100% { transform: scaleY(1); }
     50% { transform: scaleY(0.1); }
 }
 
 #onboarding-form {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -125,15 +135,10 @@ input {
 }
 
 button {
-    padding: 12px;
-    /* background: var(--cyan); */
-    background: transparent;
+    padding: 8px;
+    background: var(--bg);
     color: white;
-    /* border: 1px solid var(--cyan); */
-    font-weight: bold;
     border-radius: 8px;
-    cursor: pointer;
-    /* box-shadow: 0 2px 4px rgba(var(--sombra), 0.5); */
 }
 
 .hidden { display: none !important; }
