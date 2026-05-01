@@ -1,6 +1,8 @@
 window.addEventListener("load", function() {
 
     let buttonInstallApp = document.getElementById("buttonInstallApp");
+    buttonInstallApp.style.display = 'none';
+
     let deferredPrompt;
 
     window.addEventListener('beforeinstallprompt', (e) => {
@@ -8,19 +10,18 @@ window.addEventListener("load", function() {
     });
 
     window.addEventListener("appinstalled", () => {
-        buttonInstallApp.setAttribute("hidden", "");
-    });
+        event.preventDefault();         // Prevents immediate prompt display
+        deferredPrompt = event;
 
-    buttonInstallApp.addEventListener("click", async () => {
-        if (deferredPrompt) {
+        buttonInstallApp.style.display = 'initial';
+
+        buttonInstallApp.addEventListener('click', () => {
+            buttonInstallApp.style.display = 'none';
             deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
+        });
+
+        deferredPrompt.userChoice.then(function(choiceResult) {
             deferredPrompt = null;
-            if (outcome === 'accepted') {
-                //console.log('User accepted the install prompt.');
-            } else if (outcome === 'dismissed') {
-                //console.log('User dismissed the install prompt');
-            }
-        }
+        });
     });
 });

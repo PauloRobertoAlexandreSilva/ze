@@ -6,13 +6,36 @@
     --sombra: 50, 50, 230;
 }
 
-body {
+html, body {
     margin: 0;
+    margin: 0;
+    overscroll-behavior-inline: none;
+    overscroll-behavior: none;
+    overflow: hidden;
+}
+
+body {
     background: var(--bg);
     color: white;
     font-family: sans-serif;
-    overflow: hidden;
     font-size: small;
+}
+
+.splash-logo {
+    z-index: 99;
+    position: absolute;
+    width: 100vw; height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/Ze.png');
+    background-size: 100vw 100vh;
+    animation: blinkerlogo 2s linear;
+    opacity: 0;
+}
+@keyframes blinkerlogo {
+    0% { opacity: 100%; display: block;}
+    100% { opacity: 0; display: none;}
 }
 
 #status-bar {
@@ -28,7 +51,7 @@ body {
     font-weight: bold;
 }
 
-#buttonInstallApp {
+#buttons {
     position: absolute; right: 12px;
 }
 
@@ -65,13 +88,12 @@ body {
     background: var(--cyan);
     border-radius: 50%;
     position: absolute;
-    animation: blink 4s infinite;
+    animation: blinkpupil 4s infinite;
     border: 3px solid white;
     box-shadow: 7px 7px 1px rgba(var(--sombra), 1);
     transition: transform 0.05s linear;
 }
-
-@keyframes blink {
+@keyframes blinkpupil {
     0%, 45%, 55%, 100% { transform: scaleY(1); }
     50% { transform: scaleY(0.1); }
 }
@@ -104,13 +126,14 @@ input {
 
 button {
     padding: 12px;
-    background: var(--cyan);
-    color: black;
-    border: 1px solid var(--cyan);
+    /* background: var(--cyan); */
+    background: transparent;
+    color: white;
+    /* border: 1px solid var(--cyan); */
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(var(--sombra), 0.5);
+    /* box-shadow: 0 2px 4px rgba(var(--sombra), 0.5); */
 }
 
 .hidden { display: none !important; }
