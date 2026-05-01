@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Zé</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <main id="app-container">
+
+        <header id="status-bar" class="hidden">
+            <div class="status-item" id="battery-status">
+                <span id="hunger-icon">⚡</span> <span id="battery-level">--%</span>
+            </div>
+
+            <button id="buttonInstallApp">❤️</button>
+        </header>
+
+        <!-- Formulário inicial -->
+        <div id="onboarding-form" class="hidden">
+            <input type="text" id="input-nome" placeholder="Seu nome" autocomplete="off">
+            <input type="number" id="input-idade" placeholder="Sua idade">
+            <button id="btn-salvar">Confirmar</button>
+        </div>
+
+        <!-- Rosto do Zé -->
+        <div id="Ze-face" class="hidden">
+            <div class="eye left"><div class="pupil"></div></div>
+            <div class="eye right"><div class="pupil"></div></div>
+        </div>
+
+        <h1 id="greeting-text"></h1>
+    </main>
+
+    <div class="camera-preview">
+        <video id="video" autoplay muted></video>
+    </div>
+
+    <!-- Bibliotecas e Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="install.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "Zé",
+  "short_name": "Zé",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#00e5ff",
+  "icons": [
+    {
+      "src": "img/Ze.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
