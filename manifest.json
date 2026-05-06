@@ -2,13 +2,13 @@
   "name": "Zé",
   "short_name": "Zé",
   "app_name": "Zé",
-  "theme_color": "#0a0a0a",
-  "background_color": "#0a0a0a",
-  "display": "fullscreen",
-  "orientation": "landscape",
+  "theme_color": "#000",
+  "background_color": "#000",
+  "display": "standalone",
+  "orientation": "portrait",
   "start_url": "index.html",
   "categories": ["productivity", "utilities", "social"],
-  "description": "Transforma o seu smartphone em um amigo virtual poderoso!",
+  "description": "Transforma o seu smartphone em um amigo virtual",
   "icons": [
         {
             "src": "img/icon_60.png",
